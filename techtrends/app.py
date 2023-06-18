@@ -45,17 +45,17 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-        log_message(
-            'Article with id "{id}" does not exist!'.format(id=post_id))
+        app.logger.error(format_message(
+            'Article with id "{id}" does not exist!'.format(id=post_id)))
         return render_template('404.html'), 404
     else:
-        log_message('Article "{title}" retrieved!'.format(title=post['title']))
+        app.logger.info(format_message('Article "{title}" retrieved!'.format(title=post['title'])))
         return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
-    log_message('The "About Us" page is retrieved!')
+    app.logger.info(format_message('The "About Us" page is retrieved!'))
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -73,7 +73,7 @@ def create():
                          (title, content))
             connection.commit()
             connection.close()
-            log_message('Article "{title}" created!'.format(title=title))
+            app.logger.info(format_message('Article "{title}" created!'.format(title=title)))
             return redirect(url_for('index'))
 
     return render_template('create.html')
@@ -103,9 +103,9 @@ def metrics():
 
 
 #Function that logs messages
-def log_message(msg):
-    app.logger.info('{time} | {message}'.format(
-        time=datetime.now().strftime("%m/%d/%Y, %H:%M:%S"), message=msg))
+def format_message(msg):
+    return '{time} | {message}'.format(
+        time=datetime.now().strftime("%m/%d/%Y, %H:%M:%S"), message=msg)
 
 
 # start the application on port 3111
