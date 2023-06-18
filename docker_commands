@@ -16,12 +16,24 @@ docker logs 453f47253ffa
 WARNING:werkzeug: * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
 INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
-INFO:app:06/17/2023, 20:55:45 | The "About Us" page is retrieved!
-INFO:werkzeug:172.17.0.1 - - [17/Jun/2023 20:55:45] "GET /about HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [17/Jun/2023 20:55:45] "GET /static/css/main.css HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [17/Jun/2023 20:55:45] "GET /favicon.ico HTTP/1.1" 404 -
-INFO:app:06/17/2023, 20:55:49 | The "About Us" page is retrieved!
-INFO:werkzeug:172.17.0.1 - - [17/Jun/2023 20:55:49] "GET /about HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [17/Jun/2023 20:55:49] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO:werkzeug:172.17.0.1 - - [17/Jun/2023 20:55:58] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [17/Jun/2023 20:55:58] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:52:32] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:52:32] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:52:56] "GET /healthz HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:53:04] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:53:16] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:53:16] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:06/18/2023, 10:53:17 | Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:53:17] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:53:17] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:06/18/2023, 10:53:39 | Article with id "23" does not exist!
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:53:39] "GET /23 HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:53:39] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:06/18/2023, 10:53:57 | The "About Us" page is retrieved!
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:53:57] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:53:57] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:54:02] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:54:02] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:06/18/2023, 10:54:10 | Article "Udacity Test" created!
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:54:10] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:54:10] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Jun/2023 10:54:10] "GET /static/css/main.css HTTP/1.1" 304 -

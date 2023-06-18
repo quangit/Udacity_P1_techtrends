@@ -4,6 +4,7 @@ from flask import Flask, jsonify, json, render_template, request, url_for, redir
 from werkzeug.exceptions import abort
 from datetime import datetime
 import logging
+import sys
 
 # Count all database connections
 connection_count = 0
@@ -110,6 +111,12 @@ def log_message(msg):
 # start the application on port 3111
 if __name__ == "__main__":
     ## stream logs to a file
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(
+    level=logging.DEBUG,
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.StreamHandler(sys.stderr)
+        ]
+    )
 
     app.run(host='0.0.0.0', port='3111')
